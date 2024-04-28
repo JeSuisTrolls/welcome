@@ -17,6 +17,7 @@ public class Messages {
     public static String welcomeFormat;
 
     public static String noPermission;
+    public static String reload;
     public static int moneyReward;
 
     public static void loadMessages(FileConfiguration config) {
@@ -27,7 +28,9 @@ public class Messages {
         alreadySend = config.getString("already-send.message");
         welcomeSend = config.getString("welcome-send.message");
         welcomeFormat = config.getString("welcome-format.message");
+        reload = config.getString("reload.message");
         moneyReward = config.getInt("rewards.money");
+
 
     }
 

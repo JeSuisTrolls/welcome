@@ -4,14 +4,17 @@ import fr.jesuistrolls.welcome.commands.WelcomeCommand;
 import fr.jesuistrolls.welcome.configuration.Messages;
 import fr.jesuistrolls.welcome.configuration.Rewards;
 import fr.jesuistrolls.welcome.listeners.PlayerJoinListeners;
+import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 
 public final class Welcome extends JavaPlugin {
@@ -23,6 +26,8 @@ public final class Welcome extends JavaPlugin {
 
     private Map<UUID, List<UUID>> playerCache;
     private List<String> commandRewards;
+
+    private Plugin plugin;
 
     @Override
     public void onEnable() {
@@ -39,7 +44,7 @@ public final class Welcome extends JavaPlugin {
         pluginManager.registerEvents(new PlayerJoinListeners(playerCache, messages), this);
 
 
-        getCommand("bvn").setExecutor(new WelcomeCommand(playerCache, commandRewards, messages));
+        getCommand("bvn").setExecutor(new WelcomeCommand(playerCache, commandRewards, messages, this));
     }
 
     public void loadConfig() {

@@ -12,6 +12,8 @@ welcome-send:
   message: "<yellow><bold>Serveur<reset> <gold>Vous avez souhaité bienvenue à %player_name%"
 welcome-format:
   message: "<yellow><bold>Serveur<reset> <gold>%player_name% <green>vous a souhaité la bienvenue."
+reload:
+  message: "<yellow><bold>Serveur<reset> <gold>Reload effectué"
 
 rewards:
   enabled: true
@@ -19,4 +21,3 @@ rewards:
     - "broadcast reward 1"
     - "broadcast reward 2"
     - "broadcast reward 3"
-
