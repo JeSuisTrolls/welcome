@@ -20,14 +20,14 @@ public class Messages {
     public static String reload;
 
     public static void loadMessages(FileConfiguration config) {
-        noPlayer = config.getString("no-player.message");
-        noPermission = config.getString("no-permission.message");
-        newplayer = config.getString("new-player.message");
-        invalidPlayer = config.getString("invalid-player.message");
-        alreadySend = config.getString("already-send.message");
-        welcomeSend = config.getString("welcome-send.message");
-        welcomeFormat = config.getString("welcome-format.message");
-        reload = config.getString("reload.message");
+        noPlayer = config.getString("messages.no-player");
+        noPermission = config.getString("messages.no-permission");
+        newplayer = config.getString("messages.new-player");
+        invalidPlayer = config.getString("messages.invalid-player");
+        alreadySend = config.getString("messages.already-send");
+        welcomeSend = config.getString("messages.welcome-send");
+        welcomeFormat = config.getString("messages.welcome-format");
+        reload = config.getString("messages.reload");
 
 
     }
