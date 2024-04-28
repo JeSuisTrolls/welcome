@@ -2,6 +2,7 @@ package fr.jesuistrolls.welcome.listeners;
 
 import fr.jesuistrolls.welcome.Welcome;
 import fr.jesuistrolls.welcome.configuration.Messages;
+import fr.jesuistrolls.welcome.configuration.Rewards;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -18,7 +19,7 @@ public class PlayerJoinListeners implements Listener {
     private final Map<UUID, List<UUID>> playerCache;
 
 
-    public PlayerJoinListeners(Map<UUID, List<UUID>> playerCache, Messages messages){
+    public PlayerJoinListeners(Map<UUID, List<UUID>> playerCache, Messages messages, int timeRewards){
         this.playerCache = playerCache;
     }
 
@@ -35,7 +36,7 @@ public class PlayerJoinListeners implements Listener {
             playerCache.put(player.getUniqueId(), new ArrayList<>());
             Bukkit.getScheduler().runTaskLaterAsynchronously(Welcome.getPlugin(Welcome.class), () -> {
                 playerCache.remove(player.getUniqueId());
-            }, 240L);
+            }, Rewards.time);
         }
 
     }

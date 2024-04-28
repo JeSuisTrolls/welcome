@@ -1,7 +1,7 @@
 name: Welcome
 version: '${project.version}'
 main: fr.jesuistrolls.welcome.Welcome
-api-version: '1.20'
+api-version: "1.18"
 commands:
   bvn:
     aliases: [bienvenue, wlc, welcome]

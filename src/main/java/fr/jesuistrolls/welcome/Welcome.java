@@ -27,6 +27,8 @@ public final class Welcome extends JavaPlugin {
     private Map<UUID, List<UUID>> playerCache;
     private List<String> commandRewards;
 
+    private int timeRewards;
+
     private Plugin plugin;
 
     @Override
@@ -39,10 +41,10 @@ public final class Welcome extends JavaPlugin {
 
         playerCache = new HashMap<>();
         commandRewards = Rewards.commands;
+        timeRewards = Rewards.time;
 
         PluginManager pluginManager = Bukkit.getPluginManager();
-        pluginManager.registerEvents(new PlayerJoinListeners(playerCache, messages), this);
-
+        pluginManager.registerEvents(new PlayerJoinListeners(playerCache, messages, timeRewards), this);
 
         getCommand("bvn").setExecutor(new WelcomeCommand(playerCache, commandRewards, messages, this));
     }

@@ -1,3 +1,4 @@
+time: 1200 #Time in ticks, after this delay the player can no longer greet other players
 no-player:
   message: "<yellow><bold>Serveur<reset> <gold>Aucun joueur à qui souhaiter la bienvenue"
 no-permission:

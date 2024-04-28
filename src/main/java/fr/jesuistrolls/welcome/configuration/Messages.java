@@ -18,7 +18,6 @@ public class Messages {
 
     public static String noPermission;
     public static String reload;
-    public static int moneyReward;
 
     public static void loadMessages(FileConfiguration config) {
         noPlayer = config.getString("no-player.message");
@@ -29,7 +28,6 @@ public class Messages {
         welcomeSend = config.getString("welcome-send.message");
         welcomeFormat = config.getString("welcome-format.message");
         reload = config.getString("reload.message");
-        moneyReward = config.getInt("rewards.money");
 
 
     }
