@@ -11,10 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 public class WelcomeCommand implements TabExecutor {
 
@@ -62,18 +59,17 @@ public class WelcomeCommand implements TabExecutor {
 
                         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(newPlayer);
                         if (playerCache.get(newPlayer).contains(player.getUniqueId())) {
-                            Messages.send(player.getUniqueId(), Messages.alreadySend.replaceAll("%player_name%", player.getName()));
+                            Messages.send(player.getUniqueId(), Messages.alreadySend.replaceAll("%player_name%", Objects.requireNonNull(offlinePlayer.getName())));
                             continue;
                         }
-
-                        player.sendMessage(Messages.welcomeSend.replaceAll("%player_name%", player.getName()));
+                        Messages.send(player, Messages.welcomeSend.replaceAll("%player_name%", Objects.requireNonNull(offlinePlayer.getName())));
                         playerCache.get(newPlayer).add(player.getUniqueId());
                         if (offlinePlayer instanceof Player playeronline){
-                            playeronline.sendMessage(Messages.welcomeFormat.replaceAll("%player_name%", player.getName()));
+                            Messages.send(playeronline, Messages.welcomeFormat.replaceAll("%player_name%", player.getName()));
                         }
                         if(Rewards.enabled) {
                             for (String rewardCommand : commandRewards) {
-                                Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), rewardCommand.replace("%player%", player.getName()));
+                                Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), rewardCommand.replace("%player_name%", player.getName()));
                             }
                         } return false;
 

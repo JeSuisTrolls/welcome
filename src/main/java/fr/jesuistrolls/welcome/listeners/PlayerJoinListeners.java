@@ -14,12 +14,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import static fr.jesuistrolls.welcome.configuration.Rewards.welcomeDelay;
+
 public class PlayerJoinListeners implements Listener {
 
     private final Map<UUID, List<UUID>> playerCache;
+    public static int welcomeDelaySecond;
 
 
-    public PlayerJoinListeners(Map<UUID, List<UUID>> playerCache, Messages messages, int timeRewards){
+    public PlayerJoinListeners(Map<UUID, List<UUID>> playerCache, Messages messages, int welcomeDelay){
         this.playerCache = playerCache;
     }
 
@@ -28,15 +31,17 @@ public class PlayerJoinListeners implements Listener {
 
         Player player = event.getPlayer();
 
+        welcomeDelaySecond = welcomeDelay*20;
+
         if (!player.hasPlayedBefore()){
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                 if(player.getUniqueId() == onlinePlayer.getUniqueId()) continue;
-                onlinePlayer.sendMessage(Messages.newplayer.replace("%player_name%", player.getName()));
+                Messages.send(onlinePlayer, Messages.newplayer.replaceAll("%player_name%", player.getName()));
             }
             playerCache.put(player.getUniqueId(), new ArrayList<>());
             Bukkit.getScheduler().runTaskLaterAsynchronously(Welcome.getPlugin(Welcome.class), () -> {
                 playerCache.remove(player.getUniqueId());
-            }, Rewards.time);
+            }, welcomeDelaySecond);
         }
 
     }

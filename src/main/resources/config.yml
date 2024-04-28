@@ -1,24 +1,25 @@
-time: 1200 #Time in ticks, after this delay the player can no longer greet other players
+welcome-delay: 1200 #Time in seconds, after this delay the player can no longer greet the player who joined
 no-player:
-  message: "<yellow><bold>Serveur<reset> <gold>Aucun joueur à qui souhaiter la bienvenue"
+  message: "<yellow><bold>Server<reset> <gold>No player to greet"
 no-permission:
-  message: "<yellow><bold>Serveur<reset> <dark_red> Commande inconnue..."
+  message: "<yellow><bold>Server<reset> <dark_red>Unknown command..."
 new-player:
-  message: "<yellow><bold>Serveur<reset> <gold>Souhaitez la bienvenue à %player_name% /bvn"
+  message: "<yellow><bold>Server<reset> <gold>Welcome %player_name% /welcome"
 invalid-player:
-  message: "<yellow><bold>Serveur<reset> <gold>Vous ne pouvez pas souhaiter la bienvenue à vous-même."
+  message: "<yellow><bold>Server<reset> <gold>You cannot welcome yourself."
 already-send:
-  message: "<yellow><bold>Serveur<reset> <gold>Vous avez déjà souhaité la bienvenue à %player_name%"
+  message: "<yellow><bold>Server<reset> <gold>You have already welcomed %player_name%"
 welcome-send:
-  message: "<yellow><bold>Serveur<reset> <gold>Vous avez souhaité bienvenue à %player_name%"
+  message: "<yellow><bold>Server<reset> <gold>You welcomed %player_name%"
 welcome-format:
-  message: "<yellow><bold>Serveur<reset> <gold>%player_name% <green>vous a souhaité la bienvenue."
+  message: "<yellow><bold>Server<reset> <gold>%player_name% <green>welcomed you."
 reload:
-  message: "<yellow><bold>Serveur<reset> <gold>Reload effectué"
+  message: "<yellow><bold>Server<reset> <gold>Reload complete"
+
 
 rewards:
   enabled: true
   commands:
-    - "broadcast reward 1"
+    - "broadcast reward 1 %player_name%"
     - "broadcast reward 2"
     - "broadcast reward 3"

@@ -7,11 +7,11 @@ import java.util.List;
 public class Rewards {
     public static boolean enabled;
     public static List<String> commands;
-    public static int time;
+    public static int welcomeDelay;
 
     public static void loadRewards(FileConfiguration config) {
         enabled = config.getBoolean("rewards.enabled");
         commands = config.getStringList("rewards.commands");
-        time = config.getInt("time");
+        welcomeDelay = config.getInt("welcome-delay");
     }
 }
