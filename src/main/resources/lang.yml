@@ -1,0 +1,27 @@
+#Minimessage color format: https://docs.advntr.dev/minimessage/format.html#color
+#<color> or <#hexa_color>
+messages:
+  no-player: "<yellow><bold>Welcome: <gold>No player to greet"
+  no-permission: "<yellow><bold>Welcome: <dark_red>You don't have permission to use this command"
+  new-player: "<yellow><bold>Welcome: <gold>Welcome %player_name%! Use /welcome to greet others"
+  invalid-player: "<yellow><bold>Welcome: <gold>You cannot welcome yourself"
+  already-send: "<yellow><bold>Welcome: <gold>You have already welcomed %player_name%"
+  welcome-send: "<yellow><bold>Welcome: <gold>You have welcomed %player_name%"
+  reload: "<#a19a0e><bold>Welcome: <gold>Configuration reloaded successfully"
+  # List of welcome message formats
+  # %new_player_name% to get new player name
+  welcome-formats:
+  - "%player_name% welcomes you!" # Welcome message formatted for a player
+  - "%player_name% is happy to see you!" # Another welcome message
+  - "%player_name% is excited to have you here!" # Alternative welcome message
+  - "%player_name% greets you warmly!" # Another welcome message
+  - "%player_name% invites you to have fun!" # Friendly welcome message
+  - "%player_name% is thrilled to meet you!" # Simple and warm welcome message
+  - "%player_name% says hello and welcome!" # Welcoming and encouraging message
+  - "%player_name% hopes you enjoy your stay!" # Friendly and direct welcome message
+  - "%player_name% is glad you joined us!" # Inviting and enthusiastic welcome message
+  - "%player_name% is pleased to welcome you!" # Personal and welcoming message
+
+  #Permissions list:
+  #Permission required for /welcome: welcome.command.welcome
+  #Permission required for /welcome reload: welcome.admin

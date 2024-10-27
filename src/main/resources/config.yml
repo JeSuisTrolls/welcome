@@ -1,17 +1,13 @@
-messages:
-  no-player: "<yellow><bold>Server<reset> <gold>No player to greet"
-  no-permission: "<yellow><bold>Server<reset> <dark_red>Unknown command..."
-  new-player: "<yellow><bold>Server<reset> <gold>Welcome %player_name% /welcome"
-  invalid-player: "<yellow><bold>Server<reset> <gold>You cannot welcome yourself."
-  already-send: "<yellow><bold>Server<reset> <gold>You have already welcomed %player_name%"
-  welcome-send: "<yellow><bold>Server<reset> <gold>You welcomed %player_name%"
-  welcome-format: "<yellow><bold>Server<reset> <gold>%player_name% <green>welcomed you."
-  reload: "<yellow><bold>Server<reset> <gold>Reload complete"
-# Time in seconds, after this delay the player can no longer greet the player who joined
-welcome-delay: 65
-rewards:
-  enabled: true
-  commands:
-    - "broadcast reward 1 %player_name%"
-    - "broadcast reward 2"
-    - "broadcast reward 3"
+# Main configuration for the Welcome plugin
+settings:
+  # This is the time after the player's first connection during which the welcome message will be sent.
+  # After this time, no rewards will be given.
+  welcome_delay: 65
+  # Reward configuration
+  rewards:
+    # Enable or disable rewards
+    enabled: true
+    # List of commands to execute for rewards
+    commands:
+      - "eco give %player_name% 1000"
+      - "give %player_name% diamond 2"

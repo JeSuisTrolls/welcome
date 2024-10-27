@@ -1,10 +1,23 @@
 name: Welcome
 version: '${project.version}'
-main: fr.jesuistrolls.welcome.Welcome
-api-version: "1.18"
+main: fr.acrobatic.welcome.Welcome
+api-version: "1.16"
+depend:
+  - Vault
+  - PlaceholderAPI
 commands:
-  bvn:
-    aliases: [bienvenue, wlc, welcome]
+  welcome:
+    aliases: [bienvenue, wlc, bvn]
+permissions:
+  welcome.admin:
+    description: Gives access to all Welcome admin commands
+    default: op
+  welcome.command.welcome:
+    description: Welcome commands
+    default: true
+  welcome.join:
+    description: Join check
+    default: false
 libraries:
   - net.kyori:adventure-api:4.15.0
   - net.kyori:adventure-platform-bukkit:4.3.2

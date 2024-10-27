@@ -1,55 +1,57 @@
-package fr.jesuistrolls.welcome.configuration;
+package fr.acrobatic.welcome.configurations;
 
-import fr.jesuistrolls.welcome.Welcome;
+import fr.acrobatic.welcome.Welcome;
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
+import java.util.List;
 import java.util.UUID;
 
 public class Messages {
+
+    public static List<String> welcomeFormats;
     public static String noPlayer;
-    public static String newplayer;
+    public static String newPlayer;
     public static String invalidPlayer;
     public static String alreadySend;
     public static String welcomeSend;
-    public static String welcomeFormat;
-
     public static String noPermission;
     public static String reload;
 
     public static void loadMessages(FileConfiguration config) {
+
+        welcomeFormats = config.getStringList("messages.welcome-formats");
         noPlayer = config.getString("messages.no-player");
         noPermission = config.getString("messages.no-permission");
-        newplayer = config.getString("messages.new-player");
+        newPlayer = config.getString("messages.new-player");
         invalidPlayer = config.getString("messages.invalid-player");
         alreadySend = config.getString("messages.already-send");
         welcomeSend = config.getString("messages.welcome-send");
-        welcomeFormat = config.getString("messages.welcome-format");
         reload = config.getString("messages.reload");
-
-
     }
 
-    public static void send(UUID uuid, String message) {
-        Welcome.getAudience().player(uuid).sendMessage(MiniMessage.miniMessage().deserialize(message));
+    private static String parsePlaceholders(Player player, String message) {
+        return PlaceholderAPI.setPlaceholders(player, message);
     }
 
     public static void send(CommandSender sender, String message) {
         if (sender instanceof Player) {
-            Player player = (Player)sender;
+            Player player = (Player) sender;
+            message = parsePlaceholders(player, message);
             Welcome.getAudience().player(player).sendMessage(MiniMessage.miniMessage().deserialize(message));
         } else {
             Welcome.getAudience().console().sendMessage(MiniMessage.miniMessage().deserialize(message));
         }
     }
 
-    public static void sendActionBar(UUID uuid, String message) {
-        Welcome.getAudience().player(uuid).sendActionBar(MiniMessage.miniMessage().deserialize(message));
-    }
-
-    public static void sendConsole(String message) {
-        Welcome.getAudience().console().sendMessage(MiniMessage.miniMessage().deserialize(message));
+    public static void send(UUID uuid, String message) {
+        Player player = Bukkit.getPlayer(uuid);
+        if (player != null && player.isOnline()) {
+            send(player, message);
+        }
     }
 }
