@@ -9,7 +9,6 @@ messages:
   welcome-send: "<yellow><bold>Welcome: <gold>You have welcomed %player_name%"
   reload: "<#a19a0e><bold>Welcome: <gold>Configuration reloaded successfully"
   # List of welcome message formats
-  # %new_player_name% to get new player name
   welcome-formats:
   - "%player_name% welcomes you!" # Welcome message formatted for a player
   - "%player_name% is happy to see you!" # Another welcome message
