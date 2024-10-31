@@ -27,17 +27,20 @@ public final class Welcome extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         getLogger().info(">> Initializing config...");
         instance = this;
         saveDefaultConfig();
         loadConfigurations();
-        audience = BukkitAudiences.create(this);
 
+        audience = BukkitAudiences.create(this);
         playerCache = new HashMap<>();
+
         getLogger().info(">> Intializing hooks...");
         if(!VaultHook.setupPermissions()) return;
+
         PluginManager pluginManager = Bukkit.getPluginManager();
-        pluginManager.registerEvents(new PlayerJoinListeners(playerCache, Settings.welcomeDelay), this);
+        pluginManager.registerEvents(new PlayerJoinListeners(playerCache), this);
 
         getCommand("welcome").setExecutor(new WelcomeCommand(playerCache, this));
         getLogger().info("Enabled Welcome!");
