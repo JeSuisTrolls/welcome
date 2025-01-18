@@ -11,7 +11,7 @@ public class Settings {
     public static boolean enabled;
 
     public static void loadSettings(FileConfiguration config) {
-        welcomeDelay = config.getInt("settings.welcome-delay");
+        welcomeDelay = config.getInt("settings.welcome-delay") * 20;
         commandsRewards = config.getStringList("settings.rewards.commands");
         enabled = config.getBoolean("settings.rewards.enabled");
     }

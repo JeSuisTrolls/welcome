@@ -16,7 +16,7 @@ permissions:
     description: Welcome commands
     default: true
   welcome.join:
-    description: Join check
+    description: -in check
     default: false
 libraries:
   - net.kyori:adventure-api:4.15.0

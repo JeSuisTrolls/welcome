@@ -10,6 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.util.*;
+import java.util.function.Supplier;
 
 import static fr.acrobatic.welcome.hooks.VaultHook.perms;
 
@@ -20,7 +21,7 @@ public class PlayerJoinListeners implements Listener {
 
     public PlayerJoinListeners(Map<UUID, List<UUID>> playerCache) {
         this.playerCache = playerCache;
-        this.welcomeDelaySeconds = Settings.welcomeDelay * 20;
+        this.welcomeDelaySeconds = Settings.welcomeDelay;
     }
 
     @EventHandler

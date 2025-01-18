@@ -30,6 +30,11 @@ public class WelcomeCommand implements TabExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (!(sender instanceof Player player)) {
+            if (args.length >= 1 && "reload".equalsIgnoreCase(args[0])) {
+                reloadConfigValues();
+                Messages.send(sender, Messages.reload);
+                return true;
+            }
             return false;
         }
 

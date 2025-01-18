@@ -2,6 +2,7 @@ package fr.acrobatic.welcome;
 
 import fr.acrobatic.welcome.commands.WelcomeCommand;
 import fr.acrobatic.welcome.configurations.Messages;
+import fr.acrobatic.welcome.hooks.Metrics;
 import fr.acrobatic.welcome.hooks.VaultHook;
 import fr.acrobatic.welcome.configurations.Settings;
 import fr.acrobatic.welcome.listeners.PlayerJoinListeners;
@@ -37,6 +38,7 @@ public final class Welcome extends JavaPlugin {
         playerCache = new HashMap<>();
 
         getLogger().info(">> Intializing hooks...");
+        Metrics metrics = new Metrics(this, 24494);
         if(!VaultHook.setupPermissions()) return;
 
         PluginManager pluginManager = Bukkit.getPluginManager();

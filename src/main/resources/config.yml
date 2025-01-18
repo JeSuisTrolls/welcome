@@ -2,7 +2,7 @@
 settings:
   # This is the time after the player's first connection during which the welcome message will be sent.
   # After this time, no rewards will be given.
-  welcome-delay: 11000
+  welcome-delay: 11000 #in second
   # Reward configuration
   rewards:
     # Enable or disable rewards
