@@ -27,6 +27,7 @@ import java.util.logging.Level;
 import java.util.stream.Collectors;
 import java.util.zip.GZIPOutputStream;
 import javax.net.ssl.HttpsURLConnection;
+
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -866,7 +867,6 @@ public class Metrics {
             }
             return builder.toString();
         }
-
         /**
          * A super simple representation of a JSON object.
          *

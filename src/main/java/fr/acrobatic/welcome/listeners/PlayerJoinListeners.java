@@ -9,9 +9,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import java.util.*;
-import java.util.function.Supplier;
 
+import java.util.*;
 import static fr.acrobatic.welcome.hooks.VaultHook.perms;
 
 public class PlayerJoinListeners implements Listener {

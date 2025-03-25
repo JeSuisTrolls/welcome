@@ -3,6 +3,8 @@ settings:
   # This is the time after the player's first connection during which the welcome message will be sent.
   # After this time, no rewards will be given.
   welcome-delay: 11000 #in second
+  # Type d'envoi du message de bienvenue (global ou privé)
+  welcome-message-type: global  # Options : global, privé
   # Reward configuration
   rewards:
     # Enable or disable rewards

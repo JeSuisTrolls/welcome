@@ -6,7 +6,7 @@
 
     <groupId>fr.jesuistrolls</groupId>
     <artifactId>Welcome</artifactId>
-    <version>1.0</version> <!-- This is the version tag -->
+    <version>1.7.1</version> <!-- This is the version tag -->
     <packaging>jar</packaging>
 
     <name>Test</name>
