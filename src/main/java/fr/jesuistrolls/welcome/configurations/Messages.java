@@ -1,6 +1,6 @@
-package fr.acrobatic.welcome.configurations;
+package fr.jesuistrolls.welcome.configurations;
 
-import fr.acrobatic.welcome.Welcome;
+import fr.jesuistrolls.welcome.Welcome;
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;

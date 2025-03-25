@@ -1,4 +1,4 @@
-package fr.acrobatic.welcome.utils;
+package fr.jesuistrolls.welcome.utils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

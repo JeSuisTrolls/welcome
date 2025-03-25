@@ -1,11 +1,11 @@
-package fr.acrobatic.welcome;
+package fr.jesuistrolls.welcome;
 
-import fr.acrobatic.welcome.commands.WelcomeCommand;
-import fr.acrobatic.welcome.configurations.Messages;
-import fr.acrobatic.welcome.hooks.Metrics;
-import fr.acrobatic.welcome.hooks.VaultHook;
-import fr.acrobatic.welcome.configurations.Settings;
-import fr.acrobatic.welcome.listeners.PlayerJoinListeners;
+import fr.jesuistrolls.welcome.commands.WelcomeCommand;
+import fr.jesuistrolls.welcome.configurations.Messages;
+import fr.jesuistrolls.welcome.hooks.Metrics;
+import fr.jesuistrolls.welcome.hooks.VaultHook;
+import fr.jesuistrolls.welcome.configurations.Settings;
+import fr.jesuistrolls.welcome.listeners.PlayerJoinListeners;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;

@@ -1,4 +1,4 @@
-package fr.acrobatic.welcome.configurations;
+package fr.jesuistrolls.welcome.configurations;
 
 import org.bukkit.configuration.file.FileConfiguration;
 

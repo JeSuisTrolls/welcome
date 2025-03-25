@@ -1,8 +1,8 @@
-package fr.acrobatic.welcome.commands;
+package fr.jesuistrolls.welcome.commands;
 
-import fr.acrobatic.welcome.Welcome;
-import fr.acrobatic.welcome.configurations.Messages;
-import fr.acrobatic.welcome.configurations.Settings;
+import fr.jesuistrolls.welcome.Welcome;
+import fr.jesuistrolls.welcome.configurations.Messages;
+import fr.jesuistrolls.welcome.configurations.Settings;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;

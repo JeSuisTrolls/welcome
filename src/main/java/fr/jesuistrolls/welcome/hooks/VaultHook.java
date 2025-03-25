@@ -1,4 +1,4 @@
-package fr.acrobatic.welcome.hooks;
+package fr.jesuistrolls.welcome.hooks;
 
 import net.milkbowl.vault.permission.Permission;
 

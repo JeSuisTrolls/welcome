@@ -1,6 +1,6 @@
 name: Welcome
 version: '${project.version}'
-main: fr.acrobatic.welcome.Welcome
+main: fr.jesuistrolls.welcome.Welcome
 api-version: "1.16"
 depend:
   - Vault

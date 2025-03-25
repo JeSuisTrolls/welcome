@@ -1,8 +1,8 @@
-package fr.acrobatic.welcome.listeners;
+package fr.jesuistrolls.welcome.listeners;
 
-import fr.acrobatic.welcome.Welcome;
-import fr.acrobatic.welcome.configurations.Messages;
-import fr.acrobatic.welcome.configurations.Settings;
+import fr.jesuistrolls.welcome.Welcome;
+import fr.jesuistrolls.welcome.configurations.Messages;
+import fr.jesuistrolls.welcome.configurations.Settings;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 
 import java.util.*;
-import static fr.acrobatic.welcome.hooks.VaultHook.perms;
+import static fr.jesuistrolls.welcome.hooks.VaultHook.perms;
 
 public class PlayerJoinListeners implements Listener {
 
