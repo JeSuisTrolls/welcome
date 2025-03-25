@@ -1,5 +1,5 @@
 name: Welcome
-version: '${project.version}'
+version: '1.7.2'
 main: fr.jesuistrolls.welcome.Welcome
 api-version: "1.16"
 depend:

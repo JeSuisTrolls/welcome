@@ -73,7 +73,7 @@ public class WelcomeCommand implements TabExecutor {
                     int randomIndex = new Random().nextInt(Messages.welcomeFormats.size());
                     String randomWelcomeMessage = Messages.welcomeFormats.get(randomIndex);
                     if(Settings.welcomeMessageType.equalsIgnoreCase("global")) {
-                        Bukkit.broadcastMessage(randomWelcomeMessage);
+                        Bukkit.broadcastMessage(randomWelcomeMessage.replace("%player_name%", player.getName()));
                     } else {
                         Messages.send(newPlayerOnline, randomWelcomeMessage.replace("%player_name%", player.getName()));
                     }
