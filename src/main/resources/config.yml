@@ -7,7 +7,7 @@ settings:
   # global sends a message as a broadcast,
   # player the player executing the command sends a public message
   # and private allows a message to be sent only to the newcomer.
-  welcome-message-type: global  # Options: global, playe or private
+  welcome-message-type: global  # Options: global, player or private
   # Reward configuration
   rewards:
     # Enable or disable rewards
