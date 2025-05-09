@@ -1,13 +1,11 @@
 name: Welcome
-version: '1.7.2'
+version: ${project.version}
 main: fr.jesuistrolls.welcome.Welcome
 api-version: "1.16"
 depend:
   - Vault
   - PlaceholderAPI
 commands:
-  welcome:
-    aliases: [bienvenue, wlc, bvn]
 permissions:
   welcome.admin:
     description: Gives access to all Welcome admin commands

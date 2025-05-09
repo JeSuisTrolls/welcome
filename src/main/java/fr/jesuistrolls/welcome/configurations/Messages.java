@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class Messages {
 
@@ -23,7 +24,6 @@ public class Messages {
     public static String reload;
 
     public static void loadMessages(FileConfiguration config) {
-
         welcomeFormats = config.getStringList("messages.welcome-formats");
         noPlayer = config.getString("messages.no-player");
         noPermission = config.getString("messages.no-permission");
@@ -34,24 +34,35 @@ public class Messages {
         reload = config.getString("messages.reload");
     }
 
-    private static String parsePlaceholders(Player player, String message) {
-        return PlaceholderAPI.setPlaceholders(player, message);
+    public static String applyPlaceholders(Player target, String message) {
+        return message != null ? PlaceholderAPI.setPlaceholders(target, message) : null;
+    }
+
+    public static List<String> applyPlaceholders(Player target, List<String> messages) {
+        return messages.stream()
+                .map(message -> applyPlaceholders(target, message))
+                .collect(Collectors.toList());
+    }
+
+    public static void send(CommandSender sender, String message, Player placeholderTarget) {
+        if (message == null) return;
+        message = applyPlaceholders(placeholderTarget, message);
+        Welcome.getAudience().sender(sender).sendMessage(MiniMessage.miniMessage().deserialize(message));
+    }
+
+    public static void send(Player player, String message) {
+        send(player, message, player);
     }
 
     public static void send(CommandSender sender, String message) {
-        if (sender instanceof Player) {
-            Player player = (Player) sender;
-            message = parsePlaceholders(player, message);
-            Welcome.getAudience().player(player).sendMessage(MiniMessage.miniMessage().deserialize(message));
-        } else {
-            Welcome.getAudience().console().sendMessage(MiniMessage.miniMessage().deserialize(message));
-        }
+        if (message == null) return;
+        Welcome.getAudience().sender(sender).sendMessage(MiniMessage.miniMessage().deserialize(message));
     }
 
     public static void send(UUID uuid, String message) {
         Player player = Bukkit.getPlayer(uuid);
         if (player != null && player.isOnline()) {
-            send(player, message);
+            send(player, message, player);
         }
     }
 }

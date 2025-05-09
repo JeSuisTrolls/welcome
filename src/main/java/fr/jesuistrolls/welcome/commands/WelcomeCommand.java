@@ -12,6 +12,7 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class WelcomeCommand implements TabExecutor {
 
@@ -64,6 +65,7 @@ public class WelcomeCommand implements TabExecutor {
             }
 
             OfflinePlayer newPlayer = Bukkit.getOfflinePlayer(newPlayerUUID);
+
             Messages.send(player, Messages.welcomeSend.replace("%player_name%", newPlayer.getName()));
             playerCache.get(newPlayerUUID).add(player.getUniqueId());
 
@@ -72,17 +74,22 @@ public class WelcomeCommand implements TabExecutor {
 
                 if (newPlayerOnline != null) {
 
-                    int randomIndex = new Random().nextInt(Messages.welcomeFormats.size());
-                    String randomWelcomeMessage = Messages.welcomeFormats.get(randomIndex);
+                    String randomWelcomeMessage = Messages.welcomeFormats.get(ThreadLocalRandom.current().nextInt(Messages.welcomeFormats.size()));
 
-                    if(Settings.welcomeMessageType.equalsIgnoreCase("global")) {
-                        for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-                            Messages.send(onlinePlayer, randomWelcomeMessage.replace("%player_name%", player.getName()));
-                        }
-                    } else if (Settings.welcomeMessageType.equalsIgnoreCase("player")) {
-                        player.chat(randomWelcomeMessage.replace("%player_name%", newPlayerOnline.getName()));
-                    } else {
-                        Messages.send(newPlayerOnline, randomWelcomeMessage.replace("%player_name%", player.getName()));
+                    switch (Settings.welcomeMessageType.toLowerCase()) {
+                        case "global":
+                            for (Player online : Bukkit.getOnlinePlayers()) {
+                                Messages.send(online, randomWelcomeMessage);
+                            }
+                            break;
+
+                        case "player":
+                            player.chat(randomWelcomeMessage.replace("%player_name%", newPlayerOnline.getName()));
+                            break;
+
+                        default:
+                            player.performCommand("msg " + newPlayerOnline + " " + randomWelcomeMessage);
+                            break;
                     }
                 }
             }

@@ -1,11 +1,11 @@
 package fr.jesuistrolls.welcome;
 
-import fr.jesuistrolls.welcome.commands.WelcomeCommand;
 import fr.jesuistrolls.welcome.configurations.Messages;
 import fr.jesuistrolls.welcome.hooks.Metrics;
 import fr.jesuistrolls.welcome.hooks.VaultHook;
 import fr.jesuistrolls.welcome.configurations.Settings;
 import fr.jesuistrolls.welcome.listeners.PlayerJoinListeners;
+import fr.jesuistrolls.welcome.managers.CommandsManager;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -22,6 +22,7 @@ import java.util.UUID;
 public final class Welcome extends JavaPlugin {
 
     private static Welcome instance;
+    private static CommandsManager commandsManager;
     private static BukkitAudiences audience;
 
     private Map<UUID, List<UUID>> playerCache;
@@ -44,7 +45,7 @@ public final class Welcome extends JavaPlugin {
         PluginManager pluginManager = Bukkit.getPluginManager();
         pluginManager.registerEvents(new PlayerJoinListeners(playerCache), this);
 
-        getCommand("welcome").setExecutor(new WelcomeCommand(playerCache, this));
+        commandsManager = new CommandsManager(playerCache, this);
         getLogger().info("Enabled Welcome!");
     }
 
