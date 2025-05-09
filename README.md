@@ -11,7 +11,7 @@ Un plugin Minecraft léger et personnalisable qui permet aux joueurs de souhaite
 - 🌐 Multilingue via `lang.yml` (support MiniMessage)
 - 🎁 Récompenses configurables pour les messages de bienvenue
 - 🔧 Configuration simple (type de message, délai, etc.)
-- 📊 Intégration avec [bStats](https://bstats.org/)
+- 📊 Intégration avec [bStats](https://bstats.org/) & [PlaceholderAPI](https://wiki.placeholderapi.com)
 - 🔐 Gestion des permissions
 
 ---
@@ -23,7 +23,9 @@ Un plugin Minecraft léger et personnalisable qui permet aux joueurs de souhaite
 | `/welcome`        | `welcome.command.welcome` | Souhaite la bienvenue à un joueur      |
 | `/welcome reload` | `welcome.admin`           | Recharge les fichiers de configuration |
 
-💾 Installation
+---
+
+## 💾 Installation
 1. Compilez avec Maven ou Gradle
 2. Placez le .jar dans le dossier plugins/ de votre serveur Minecraft
 3. Démarrez le serveur une première fois pour générer les fichiers
