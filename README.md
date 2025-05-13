@@ -1,33 +1,33 @@
 # 🎉 Welcome Plugin – Spigot/Bukkit
 
-Un plugin Minecraft léger et personnalisable qui permet aux joueurs de souhaiter la bienvenue aux nouveaux venus sur votre serveur. Compatible avec Vault et intégrable à d'autres plugins grâce à sa structure propre.
+A lightweight and customizable Minecraft plugin that allows players to greet newcomers on your server. Compatible with Vault and integrable with other plugins thanks to its clean structure.
 
 ---
 
-## 📦 Fonctionnalités principales
+## 📦 Key Features
 
-- 🔔 Envoi automatique de messages de bienvenue
-- 💬 Commande `/welcome` personnalisable
-- 🌐 Multilingue via `lang.yml` (support MiniMessage)
-- 🎁 Récompenses configurables pour les messages de bienvenue
-- 🔧 Configuration simple (type de message, délai, etc.)
-- 📊 Intégration avec [bStats](https://bstats.org/) & [PlaceholderAPI](https://wiki.placeholderapi.com)
-- 🔐 Gestion des permissions
+- 🔔 Automatic sending of welcome messages
+- 💬 Customizable `/welcome` command
+- 🌐 Multilingual support `lang.yml` (supports MiniMessage)
+- 🎁 Configurable rewards for welcome messages
+- 🔧 Simple configuration (message type, delay, etc.)
+- 📊 Integration with [bStats](https://bstats.org/), [PlaceholderAPI](https://wiki.placeholderapi.com) and [Vault](https://github.com/milkbowl/Vault)
+- 🔐 Permission management
 
 ---
 
-## 🧪 Commandes et Permissions
+## 🧪 Commands and Permissions
 
-| Commande          | Permission                | Description                            |
+| Command           | Permission                | Description                            |
 | ----------------- | ------------------------- | -------------------------------------- |
-| `/welcome`        | `welcome.command.welcome` | Souhaite la bienvenue à un joueur      |
-| `/welcome reload` | `welcome.admin`           | Recharge les fichiers de configuration |
+| `/welcome`        | `welcome.command.welcome` | Greets a player                        |
+| `/welcome reload` | `welcome.admin`           | Reloads configuration files            |
 
 ---
 
 ## 💾 Installation
-1. Compilez avec Maven ou Gradle
-2. Placez le .jar dans le dossier plugins/ de votre serveur Minecraft
-3. Démarrez le serveur une première fois pour générer les fichiers
-4. Configurez config.yml et lang.yml à votre convenance
-5. Redémarrez ou rechargez avec /welcome reload
+1. Compile using Maven or Gradle
+2. Place the .jar file in the plugins/ folder of your Minecraft server
+3. Start the server once to generate configuration files
+4. Customize config.yml and lang.yml as needed
+5. Restart or reload using /welcome reload
