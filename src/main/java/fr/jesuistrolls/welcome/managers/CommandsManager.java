@@ -52,7 +52,6 @@ public class CommandsManager {
             bukkitCommandMap.setAccessible(true);
             this.commandMap = (CommandMap) bukkitCommandMap.get(Bukkit.getServer());
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            e.printStackTrace();
             throw new RuntimeException("Unable to setup command map");
         }
     }

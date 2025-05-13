@@ -1,6 +1,7 @@
 #Minimessage color format: https://docs.advntr.dev/minimessage/format.html#color
 #<color> or <#hexa_color>
 messages:
+  send-update-message: true
   no-player: "<yellow><bold>Welcome: <gold>No player to greet"
   no-permission: "<yellow><bold>Welcome: <dark_red>You don't have permission to use this command"
   new-player: "<yellow><bold>Welcome: <gold>Welcome %player_name%! Use /welcome to greet others"

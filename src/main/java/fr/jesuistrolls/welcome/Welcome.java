@@ -6,6 +6,7 @@ import fr.jesuistrolls.welcome.hooks.VaultHook;
 import fr.jesuistrolls.welcome.configurations.Settings;
 import fr.jesuistrolls.welcome.listeners.PlayerJoinListeners;
 import fr.jesuistrolls.welcome.managers.CommandsManager;
+import fr.jesuistrolls.welcome.utils.UpdateChecker;
 import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -24,6 +25,7 @@ public final class Welcome extends JavaPlugin {
     private static Welcome instance;
     private static CommandsManager commandsManager;
     private static BukkitAudiences audience;
+    private static UpdateChecker updateChecker;
 
     private Map<UUID, List<UUID>> playerCache;
 
@@ -47,6 +49,9 @@ public final class Welcome extends JavaPlugin {
 
         commandsManager = new CommandsManager(playerCache, this);
         getLogger().info("Enabled Welcome!");
+
+        updateChecker = new UpdateChecker(this, 119888);
+        updateChecker.checkForUpdate();
     }
 
 

@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 public class Messages {
 
+    public static Boolean updateMessage;
     public static List<String> welcomeFormats;
     public static String noPlayer;
     public static String newPlayer;
@@ -24,6 +25,7 @@ public class Messages {
     public static String reload;
 
     public static void loadMessages(FileConfiguration config) {
+        updateMessage = config.getBoolean("messages.send-update-message");
         welcomeFormats = config.getStringList("messages.welcome-formats");
         noPlayer = config.getString("messages.no-player");
         noPermission = config.getString("messages.no-permission");
